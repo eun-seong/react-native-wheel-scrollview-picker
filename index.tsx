@@ -7,6 +7,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View,
   ViewProps,
   ViewStyle,
@@ -117,9 +118,11 @@ export default function ScrollPicker({
     );
 
     return (
-      <View style={[styles.itemWrapper, { height: itemHeight }]} key={index}>
-        {item}
-      </View>
+      <TouchableHighlight key={index}>
+        <View style={[styles.itemWrapper, { height: itemHeight }]}>
+          {item}
+        </View>
+      </TouchableHighlight>
     );
   };
   const scrollFix = useCallback(
